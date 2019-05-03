@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+@SuppressWarnings("serial")
 public class RandomIterationAlgorithm extends JPanel implements ActionListener{
 		
 //	IFS FOR A FERN
