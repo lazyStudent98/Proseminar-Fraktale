@@ -29,28 +29,22 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //		double f2 [] = {0.85,  0.04, -0.04, 0.85, 0,  110};
 //		double f3 [] = {0.2,  -0.26,  0.23, 0.22, 0,  110};
 //		double f4 [] = {-0.15, 0.28,  0.26, 0.24, 0,  44};
-
-//		IFS FOR A FRACTAL TREE
-//		double f1 [] = {0,        0,     0,  0.5, 0, 0};
-//		double f2 [] = {0.42, -0.42,  0.42, 0.42, 0, 500};
-//		double f3 [] = {0.42,  0.42, -0.42, 0.42, 50, 300};
-//		double f4 [] = {0.1,      0,     0,  0.1, 0, 300};
 		
 // 		TEST
-//		double f1 [] = {0.14,     0.01,   0.0,   0.1, -0.08, -1.31};
-//		double f2 [] = {0.43,     0.52, -0.45,   0.5,  1.49, -0.75};
-//		double f3 [] = {0.45,    -0.49,  0.47,  0.47, -1.62, -0.74};
-//		double f4 [] = {0.49,     0.00,  0.00,  0.51,  0.02,  1.62};
+//		double f1 [] = {0.14,     0.01,   0.0,   0.1, 0, 400};
+//		double f2 [] = {0.43,     0.52, -0.45,   0.5,  0, 220};
+//		double f3 [] = {0.45,    -0.49,  0.47,  0.47, 0, 220};
+//		double f4 [] = {0.49,     0.00,  0.00,  0.51,  0,  400};
 		
 		double  functions [][] = {f1,f2, f3}; 
 		
 		static int WIDTH  = 800;
 		static int HEIGHT = 800;
 		static boolean [][] outPut = new boolean[WIDTH][HEIGHT];
-		static int ITERATIONS = 20;
+		static int ITERATIONS = 40;
 		static int counter = 0;
 		
-		Timer tm = new Timer(300,this);
+		Timer tm = new Timer(400,this);
 		
 		public BufferedImage buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		
@@ -118,8 +112,15 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 			}
 		}
 		
-		public static void quadrat() {
+		public static void quadratOben() {
 			
+			for(int i = 0; i< 60; i++) {
+				for(int j = 700; j< 760; j++) {
+					outPut[i][j] = true;
+				}
+			}
+		}
+		public static void quadrat() {
 			for(int i = WIDTH/2 - 60; i< WIDTH/2 + 30; i++) {
 				for(int j = HEIGHT/2 - 60; j< HEIGHT/2 + 30; j++) {
 					outPut[i][j] = true;
@@ -153,10 +154,11 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 			//outPut[40][500] = true;
 			//triangle();
 			//winkelHalbierende();
-			//quadrat();
+			//quadratOben();
+			quadrat();
 		    //mittelLinie();
 			//ganzerScreen();
-			kreisImMittelpunkt(399, 399, 300);
+			//kreisImMittelpunkt(399, 399, 300);
 			DeterministicAlgorithm s = new DeterministicAlgorithm();
 			JFrame frame= new JFrame();   
 			frame.setTitle("DeterministicAlgorithm");

@@ -6,23 +6,29 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
 @SuppressWarnings("serial")
 public class CantorSet extends JPanel implements ActionListener{
-	
-		double f1[] = {0.333,      0};
-		double f2[] = {0.333, 1000};
+
+//		IFS Beispiel 7.1 (Cantorsche Menge)
+//		double f1[] = {0.333,      0};
+//		double f2[] = {0.333, 1000};
+		
+// 		IFS Beispiel 7.8		
+		double f1[] = {0,      0};
+		double f2[] = {0.666, 500};		
 		
 		double  functions [][] = {f1, f2}; 
 		
 		static int WIDTH  = 1500;
 		static int HEIGHT = 800;
 		static boolean [][] outPut = new boolean[WIDTH][HEIGHT];
-		static int ITERATIONS = 20;
+		static int ITERATIONS = 30;
 		static int counter = 0;
 		static boolean [] xValue = new boolean[WIDTH];
 		
 		
-		Timer tm = new Timer(500,this);
+		Timer tm = new Timer(900,this);
 		
 		public BufferedImage buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		
