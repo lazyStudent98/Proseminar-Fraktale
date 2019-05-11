@@ -10,11 +10,11 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class CantorSet extends JPanel implements ActionListener{
 
-//		IFS Beispiel 7.1 (Cantorsche Menge)
+//		1. IFS Beispiel 7.1 (Cantorsche Menge)
 //		double f1[] = {0.333,      0};
 //		double f2[] = {0.333, 1000};
 		
-// 		IFS Beispiel 7.8		
+// 		2 . IFS Beispiel 7.8		
 		double f1[] = {0,      0};
 		double f2[] = {0.666, 500};		
 		
@@ -92,7 +92,7 @@ public class CantorSet extends JPanel implements ActionListener{
 			}
 		}
 
-		public static void init() {
+		public static void initBsp1() {
 			for(int i = 0;i< WIDTH;i++) {
 				xValue[i] = true;
 			}
@@ -102,9 +102,16 @@ public class CantorSet extends JPanel implements ActionListener{
 				}
 			}
 		}
+		public static void initBsp2() {
+			xValue[0] = true;
+			for(int j = 0; j<outPut[0].length; j++) {
+				outPut[0][j] = true;
+			}
+		}
 		
 		public static void main(String args[]) {
-			init();
+			//initBsp1();
+			initBsp2();
 			CantorSet s = new CantorSet();
 			JFrame frame= new JFrame();   
 			frame.setTitle("Cantor Set");

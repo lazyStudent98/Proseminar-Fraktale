@@ -11,9 +11,9 @@ import javax.swing.Timer;
 public class DeterministicAlgorithm extends JPanel implements ActionListener{
 	
 //		IFS FOR A SIERPINSKI TRIANGLE 	
-		double f1 [] = {0.5, 0, 0, 0.5, 1, 1};
-		double f2 [] = {0.5, 0, 0, 0.5, 1, 400};
-		double f3 [] = {0.5, 0, 0, 0.5, 400, 400};
+//		double f1 [] = {0.5, 0, 0, 0.5, 1, 1};
+//		double f2 [] = {0.5, 0, 0, 0.5, 1, 400};
+//		double f3 [] = {0.5, 0, 0, 0.5, 400, 400};
 	
 // 		IFS CREEPY STUFF
 //		double f1 [] = {0, 0.5, 0.5, 0, 1, 1};
@@ -21,8 +21,8 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //		double f3 [] = {0, 0.5, 0.5, 0, 400, 400};	
 		
 //		IFS Figure III.62
-//		double f1 [] = {0.5, 0, 0, 0.5 , WIDTH/2, HEIGHT/2};
-//		double f2 [] = {0.5, 0, 0, 0.5 ,   0,    0};
+		double f1 [] = {0.5, 0, 0, 0.5 , WIDTH/2, HEIGHT/2};
+		double f2 [] = {0.5, 0, 0, 0.5 ,   0,    0};
 
 //		IFS FOR A FERN
 //		double f1 [] = {0,        0,     0, 0.16, 0,    0};
@@ -36,15 +36,15 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //		double f3 [] = {0.45,    -0.49,  0.47,  0.47, 0, 220};
 //		double f4 [] = {0.49,     0.00,  0.00,  0.51,  0,  400};
 		
-		double  functions [][] = {f1,f2, f3}; 
+		double  functions [][] = {f1 ,f2}; 
 		
 		static int WIDTH  = 800;
 		static int HEIGHT = 800;
 		static boolean [][] outPut = new boolean[WIDTH][HEIGHT];
-		static int ITERATIONS = 40;
+		static int ITERATIONS = 30;
 		static int counter = 0;
 		
-		Timer tm = new Timer(400,this);
+		Timer tm = new Timer(800,this);
 		
 		public BufferedImage buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		
@@ -96,22 +96,19 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 			}
 		}
 	}
-
-		public static void triangle() {
+		public static void UntenObenLinie() {
 		
 			for(int i = 0; i<WIDTH;i++) {
 				outPut[i][HEIGHT-1] = true;
 				outPut[i][0] = true;
 			}
 		}	
-	
 		public static void winkelHalbierende() {
 			
 			for(int i = 0; i< Math.min(WIDTH, HEIGHT); i++) {
 				outPut[i] [i] = true;
 			}
-		}
-		
+		}		
 		public static void quadratOben() {
 			
 			for(int i = 0; i< 60; i++) {
@@ -126,8 +123,7 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 					outPut[i][j] = true;
 				}
 			}
-		}
-		
+		}		
 		public static void mittelLinie() {
 			
 			for(int i = 0; i<HEIGHT;i++) {
@@ -149,16 +145,24 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 				}
 			}
 		}
+		public static void phi() {
+			UntenObenLinie();
+			mittelLinie();
+			kreisImMittelpunkt(399, 399, 300);
+		}
 		
 		public static void main(String args[]) {
-			//outPut[40][500] = true;
-			//triangle();
-			//winkelHalbierende();
-			//quadratOben();
-			quadrat();
-		    //mittelLinie();
-			//ganzerScreen();
-			//kreisImMittelpunkt(399, 399, 300);
+//			outPut[40][500] = true;
+//			outPut[0][0] = true;
+//			outPut[WIDTH-1][HEIGHT-1] = true;
+//			UntenObenLinie();
+			winkelHalbierende();
+//			quadratOben();
+//			quadrat();
+//		    mittelLinie();
+//			ganzerScreen();
+//			kreisImMittelpunkt(399, 399, 300);
+//			phi();
 			DeterministicAlgorithm s = new DeterministicAlgorithm();
 			JFrame frame= new JFrame();   
 			frame.setTitle("DeterministicAlgorithm");
