@@ -11,12 +11,12 @@ import javax.swing.Timer;
 public class CantorSet extends JPanel implements ActionListener{
 
 //		1. IFS Beispiel 7.1 (Cantorsche Menge)
-//		double f1[] = {0.333,      0};
-//		double f2[] = {0.333, 1000};
+		double f1[] = {0.333,      0};
+		double f2[] = {0.333, 1000};
 		
 // 		2 . IFS Beispiel 7.8		
-		double f1[] = {0,      0};
-		double f2[] = {0.666, 500};		
+//		double f1[] = {0,      0};
+//		double f2[] = {0.666, 500};		
 		
 		double  functions [][] = {f1, f2}; 
 		
@@ -79,7 +79,6 @@ public class CantorSet extends JPanel implements ActionListener{
 				}
 			}
 		}
-
 		public void CalculatePoints() {
 			update();	// updatet die x Koordinaten
 			delScreen();
@@ -91,7 +90,6 @@ public class CantorSet extends JPanel implements ActionListener{
 				}
 			}
 		}
-
 		public static void initBsp1() {
 			for(int i = 0;i< WIDTH;i++) {
 				xValue[i] = true;
@@ -108,10 +106,9 @@ public class CantorSet extends JPanel implements ActionListener{
 				outPut[0][j] = true;
 			}
 		}
-		
 		public static void main(String args[]) {
-			//initBsp1();
-			initBsp2();
+			initBsp1();
+//			initBsp2();
 			CantorSet s = new CantorSet();
 			JFrame frame= new JFrame();   
 			frame.setTitle("Cantor Set");

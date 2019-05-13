@@ -21,14 +21,14 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //		double f3 [] = {0, 0.5, 0.5, 0, 400, 400};	
 		
 //		IFS Figure III.62
-		double f1 [] = {0.5, 0, 0, 0.5 , WIDTH/2, HEIGHT/2};
-		double f2 [] = {0.5, 0, 0, 0.5 ,   0,    0};
+//		double f1 [] = {0.5, 0, 0, 0.5 , WIDTH/2, HEIGHT/2};
+//		double f2 [] = {0.5, 0, 0, 0.5 ,   0,    0};
 
 //		IFS FOR A FERN
-//		double f1 [] = {0,        0,     0, 0.16, 0,    0};
-//		double f2 [] = {0.85,  0.04, -0.04, 0.85, 0,  110};
-//		double f3 [] = {0.2,  -0.26,  0.23, 0.22, 0,  110};
-//		double f4 [] = {-0.15, 0.28,  0.26, 0.24, 0,  44};
+		double f1 [] = {0,        0,     0, 0.16, 0,    0};
+		double f2 [] = {0.85,  0.04, -0.04, 0.85, 0,  110};
+		double f3 [] = {0.2,  -0.26,  0.23, 0.22, 0,  110};
+		double f4 [] = {-0.15, 0.28,  0.26, 0.24, 0,  44};
 		
 // 		TEST
 //		double f1 [] = {0.14,     0.01,   0.0,   0.1, 0, 400};
@@ -36,7 +36,7 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //		double f3 [] = {0.45,    -0.49,  0.47,  0.47, 0, 220};
 //		double f4 [] = {0.49,     0.00,  0.00,  0.51,  0,  400};
 		
-		double  functions [][] = {f1 ,f2}; 
+		double  functions [][] = {f1 ,f2,f3,f4}; 
 		
 		static int WIDTH  = 800;
 		static int HEIGHT = 800;
@@ -44,7 +44,7 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 		static int ITERATIONS = 30;
 		static int counter = 0;
 		
-		Timer tm = new Timer(800,this);
+		Timer tm = new Timer(300,this);
 		
 		public BufferedImage buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		
@@ -156,12 +156,12 @@ public class DeterministicAlgorithm extends JPanel implements ActionListener{
 //			outPut[0][0] = true;
 //			outPut[WIDTH-1][HEIGHT-1] = true;
 //			UntenObenLinie();
-			winkelHalbierende();
+//			winkelHalbierende();
 //			quadratOben();
 //			quadrat();
 //		    mittelLinie();
 //			ganzerScreen();
-//			kreisImMittelpunkt(399, 399, 300);
+			kreisImMittelpunkt(399, 399, 300);
 //			phi();
 			DeterministicAlgorithm s = new DeterministicAlgorithm();
 			JFrame frame= new JFrame();   
